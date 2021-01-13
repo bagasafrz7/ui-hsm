@@ -1,0 +1,10 @@
+.searching {
+    background-color: rgb(224, 224, 224);
+    padding: 30px 25px 10px 25px;
+    margin: 25px 0;
+}
+
+.bi-search::before {
+    content: "\f502";
+    margin: 10px 20px 0 0;
+}
