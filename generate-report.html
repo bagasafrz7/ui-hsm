@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link href="css/bootstrap-4-navbar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="css/generate-report.css">
+    <title>Generate Report</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light btco-hover-menu">
+            <a class="navbar-brand" href="#">HSM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Views
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item dropdown-toggle" href="#">Groups</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="group-list.html">Group List</a></li>
+                                    <li><a class="dropdown-item" href="#">HSMs By Group</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item dropdown-toggle" href="#">HSMs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hsm-list.html">HSM List</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Reports
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Generate Reports</a>
+                            </li>
+                            <li><a class="dropdown-item" href="scheduled-report.html">Scheduled Reports</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Configuration
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item dropdown-toggle" href="#">Groups</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="group-list.html">Group List</a></li>
+                                    <li><a class="dropdown-item" href="#">HSMs By Group</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item dropdown-toggle" href="#">HSMs</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
+
+                                    <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Subsubmenu action 1 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Another subsubmenu action 2 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logs.html">Logs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alarms.html">Alarms</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <span class="badge bg-secondary badge-generate">Generate Report</span>
+
+        <section class="hero mt-4">
+            <div class="container">
+                <!-- Group and Devices -->
+                <p>
+                    <button class="btn dropdown-toggle btn-dropdown" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#EventList" aria-expanded="false" aria-controls="EventList">
+                        Group and Devices
+                    </button>
+                </p>
+                <div class="collapse data-collapse" id="EventList">
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Select a Group :</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected disabled>Mixed Group</option>
+                                <option value="5">Mixed Group</option>
+                                <option value="10">Mixed Group 2</option>
+                                <option value="15">Mixed Group 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label class="form-label mt-4">Select a report type :</label><br>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary">
+                            Group Report
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-check" viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-dark">Device Report</button>
+                    </div>
+
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            (optional) Show Top 10 Devices.
+                        </label>
+                    </div>
+                </div>
+                <!-- Group and Devices -->
+                <!-- Report Configuration -->
+                <p>
+                    <button class="btn dropdown-toggle btn-dropdown" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#Users" aria-expanded="false" aria-controls="Users">
+                        Report Configuration
+                    </button>
+                </p>
+                <div class="collapse data-collapse" id="Users">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Enter the report name :</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Select a report type :</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>Utilization and Loading Trends</option>
+                                    <option value="5">Utilization and Loading Trends 1</option>
+                                    <option value="10">Utilization and Loading Trends 2</option>
+                                    <option value="15">Utilization and Loading Trends 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Select an output format :</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>PDF</option>
+                                    <option value="5">PDF </option>
+                                    <option value="10">PDF 2</option>
+                                    <option value="15">PDF 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Select a report orientaion :</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Portrait</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Landscape</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Select a schedule :</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>One-Time</option>
+                                    <option value="5">One-Time </option>
+                                    <option value="10">Scheduled</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Select a time/date range :</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>Last 24 Hours</option>
+                                    <option value="5">Last 24 Hours</option>
+                                    <option value="5">Last 12 Hours</option>
+                                    <option value="5">Last 6 Hours</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Report Configuration -->
+                <!-- Utilization and Loading Trends Options -->
+                <p>
+                    <button class="btn dropdown-toggle btn-dropdown" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#payShieldPerformence" aria-expanded="false"
+                        aria-controls="payShieldPerformence">
+                        Utilization and Loading Trends Options
+                    </button>
+                </p>
+                <div class="collapse data-collapse" id="payShieldPerformence">
+                    <h6>payShield Options</h6>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">High Utilization Threshold(%) :</label>
+                            <input type="text" class="form-control" placeholder="75">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Low Utilization Threshold(%) :</label>
+                            <input type="text" class="form-control" placeholder="25">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Select a command profile :</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected disabled>ALL Commands</option>
+                                <option value="5">ALL Commands</option>
+                                <option value="5">ALL Commands 1</option>
+                                <option value="5">ALL Commands 2</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Aggregation method :</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected disabled>Average</option>
+                                <option value="5">Average</option>
+                                <option value="5">Average 1</option>
+                                <option value="5">Average 2</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary">Generate Report</button>
+                        <button type="button" class="btn btn-outline-danger">Cancel Changes</button>
+                    </div>
+                </div>
+                <!-- Utilization and Loading Trends Options -->
+            </div>
+        </section>
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+        <script src="js/jquery-3.5.1.js"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+
+        <script src="js/bootstrap-4-navbar.js"></script>
+
+</body>
+
+</html>
