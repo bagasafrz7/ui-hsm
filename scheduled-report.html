@@ -23,7 +23,10 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <link rel="stylesheet" href="css/alarms.css">
-    <title>Alarms</title>
+
+    <link rel="stylesheet" href="css/scheduled-report.css">
+
+    <title>Scheduled Reports</title>
 </head>
 
 <body>
@@ -107,7 +110,9 @@
             </div>
         </nav>
 
-        <span class="badge bg-secondary badge-alarm">Current Unacknowledged Alarms</span>
+        <span class="badge bg-secondary badge-alarm">Scheduled Reports</span>
+
+        <button type="button" class="btn btn-danger mt-3">Delete Jobs(s)</button>
 
         <div class="searching">
             <div class="input-group mb-3">
@@ -120,47 +125,140 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Date/Time</th>
-                    <th>Severity</th>
-                    <th>Message</th>
+                    <th>Enabled</th>
+                    <th>Name</th>
+                    <th>Group</th>
+                    <th>Last Run</th>
+                    <th>Next Run</th>
+                    <th>Frequency</th>
+                    <th>File Type</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                    </td>
+                    <td>ccc</td>
+                    <td>Group 1</td>
+                    <td>08/06/2017 10:00:01</span></td>
+                    <td>09/06/2017 10:00:01</td>
+                    <td>MONTHLY</td>
+                    <td>PDF</td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                    </td>
+                    <td>groupReport</td>
+                    <td>Group 1</td>
+                    <td>08/06/2017 10:00:01</span></td>
+                    <td>09/06/2017 10:00:01</td>
+                    <td>DAILY</td>
+                    <td>PDF</td>
                 </tr>
             </tbody>
         </table>
 
-        <button type="button" class="btn btn-secondary my-2 mb-4">Export Log (CSV)</button>
+        <button type="button" class="btn btn-secondary my-2">Export Log (CSV)</button>
 
 
-        <form class="my-4">
-            <label class="form-check-label" for="exampleCheck1">Acknowledgement Comment (Optional) :</label>
-            <div class="mb-3">
-                <input type="text" class="form-control">
+        <!-- UI Ketika Content Name di table di klik -->
+        <div class="show">
+            <span class="badge bg-secondary badge-alarm">groupReports</span>
+
+            <button type="button" class="btn btn-secondary mt-3">Bulk Download</button>
+            <button type="button" class="btn btn-dark mt-3">Download All</button>
+            <button type="button" class="btn btn-danger mt-3">Delete Jobs(s)</button>
+
+            <div class="searching">
+                <div class="input-group mb-3">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="form-control" placeholder="Search: ..." aria-label="Recipient's username">
+                    <button class="btn btn-secondary" type="button" id="button-addon2">Add</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-dark">Acknowledge Alarm</button>
-            <button type="button" class="btn btn-outline-danger">Cancel</button>
-        </form>
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </th>
+                        <th>Ran At</th>
+                        <th>Download</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
+                        <td>08/06/2017 10:00:01</td>
+                        <td><a href="#">Download Report</a></td>
+                        <td>PDF</td>
+                        <td>SUCCESS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
+                        <td>08/06/2017 10:00:01</td>
+                        <td><a href="#">Download Report</a></td>
+                        <td>PDF</td>
+                        <td>SUCCESS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
+                        <td>08/06/2017 10:00:01</td>
+                        <td><a href="#">Download Report</a></td>
+                        <td>PDF</td>
+                        <td>SUCCESS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
+                        <td>08/06/2017 10:00:01</td>
+                        <td><a href="#">Download Report</a></td>
+                        <td>PDF</td>
+                        <td>SUCCESS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
+                        <td>08/06/2017 10:00:01</td>
+                        <td><a href="#">Download Report</a></td>
+                        <td>PDF</td>
+                        <td>SUCCESS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- UI Ketika Content Name di table di klik -->
     </div>
 
 

@@ -12,6 +12,8 @@
 
     <link href="css/bootstrap-4-navbar.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <title>HSM</title>
 </head>
@@ -46,15 +48,7 @@
                             </li>
                             <li><a class="dropdown-item dropdown-toggle" href="#">HSMs</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
-
-                                    <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Subsubmenu action 1 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Another subsubmenu action 2 3</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a class="dropdown-item" href="hsm-list.html">HSM List</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,24 +59,9 @@
                             Reports
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item dropdown-toggle" href="#">Groups</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Group List</a></li>
-                                    <li><a class="dropdown-item" href="#">HSMs By Group</a></li>
-                                </ul>
+                            <li><a class="dropdown-item" href="#">Generate Reports</a>
                             </li>
-                            <li><a class="dropdown-item dropdown-toggle" href="#">HSMs</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Submenu action 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu action 2</a></li>
-
-                                    <li><a class="dropdown-item dropdown-toggle" href="#">Subsubmenu</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Subsubmenu action 1 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Another subsubmenu action 2 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li><a class="dropdown-item" href="scheduled-report.html">Scheduled Reports</a>
                             </li>
                         </ul>
                     </li>
@@ -193,6 +172,16 @@
                     </button>
                 </p>
                 <div class="collapse data-collapse" id="Users">
+                    <div class="add-user">
+                        <span class="badge bg-secondary badge-add">Add User
+                            <i class="bi bi-person-plus"></i>
+                        </span>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Tambahkan User"
+                                aria-label="Recipient's username">
+                            <button class="btn btn-secondary" type="button" id="button-addon2">Add</button>
+                        </div>
+                    </div>
                     <div class="row mb-2">
                         <div class="col-md-4 col-sm-5">
                             <select class="form-select" aria-label="Default select example">
@@ -384,6 +373,9 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>
 
+        <script src="js/jquery-3.5.1.js"></script>
+
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -402,12 +394,20 @@
             var options = {
                 series: [
                     {
-                        name: "High - 2013",
-                        data: [28, 29, 33, 36, 32, 32, 33]
+                        name: "MAX",
+                        data: [100, 100, 100, 100, 100, 100, 100]
                     },
                     {
-                        name: "Low - 2013",
-                        data: [12, 11, 14, 18, 17, 13, 13]
+                        name: "Test VpS",
+                        data: [20, 15, 20, 18, 20, 13, 25]
+                    },
+                    {
+                        name: "Mixes Group",
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    },
+                    {
+                        name: "1",
+                        data: [25, 27, 30, 33, 37, 40, 43]
                     }
                 ],
                 chart: {
@@ -425,7 +425,7 @@
                         show: false
                     }
                 },
-                colors: ['#77B6EA', '#545454'],
+                colors: ['#FF0000', '#77B6EA', '#545454', '#00ff00'],
                 dataLabels: {
                     enabled: true,
                 },
@@ -433,8 +433,8 @@
                     curve: 'smooth'
                 },
                 title: {
-                    text: 'Average High & Low Temperature',
-                    align: 'left'
+                    text: 'payShield Utilization, Last Hour',
+                    align: 'center'
                 },
                 grid: {
                     borderColor: '#e7e7e7',

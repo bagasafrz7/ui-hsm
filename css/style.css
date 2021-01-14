@@ -41,6 +41,27 @@
     box-shadow: 0 0 0 0.25rem rgba(34, 34, 34, 0.5);
 }
 
+.add-user {
+    background-color: rgb(224, 224, 224);
+    padding: 30px 25px 10px 25px;
+    margin: 25px 0;
+}
+
+.badge-add {
+    border: 1px solid #6c757d;
+    width: 25%;
+    text-align: left;
+    border-radius: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* .bi-person-plus::before {
+    content: "\f4b6";
+    margin: 10px 15px 0 5px;
+    font-size: 20px;
+} */
+
 .badge-status {
     border: 1px solid #6c757d;
     width: 25%;
