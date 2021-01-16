@@ -10,24 +10,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+    <link href="css/bootstrap-4-navbar.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <link href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <link href="css/bootstrap-4-navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alarms.css">
+
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"
+        integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ=="
+        crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="css/alarms.css">
-    <title>Alarms</title>
+    <title>Network</title>
 </head>
 
 <body>
+
     <div class="container">
+
+        <!-- Static navbar -->
         <nav class="navbar navbar-expand-md navbar-light bg-light btco-hover-menu">
             <a class="navbar-brand" href="index.html">HSM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -97,94 +105,83 @@
             </div>
         </nav>
 
-        <span class="badge bg-secondary badge-alarm">Current Unacknowledged Alarms</span>
+        <span class="badge bg-secondary badge-alarm mb-4">Network and Settings</span>
 
-        <div class="searching">
-            <div class="input-group mb-3">
-                <i class="bi bi-search"></i>
-                <input type="text" class="form-control" placeholder="Search: ..." aria-label="Recipient's username">
-                <button class="btn btn-secondary" type="button" id="button-addon2">Add</button>
+        <div class="btn-group mb-4" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">
+                DHCP
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z">
+                    </path>
+                </svg>
+            </button>
+            <button type="button" class="btn btn-dark">Static</button>
+        </div><br>
+
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">IP Address :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="192.168.17.184">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Subnet Mask :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="255.255.248.0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Gateway :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="192.168.16.20">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Host Name :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="hsm-Host">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Domain (optional) :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="qa.sv.us.hsm.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Primary DNS (optional) :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="192.168.17.79">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Secondary DNS (optional) :</label>
+                        <input class="form-control" type="text" id="formFile" placeholder="192.168.17.80">
+                    </div>
+                </div>
             </div>
-        </div>
-        <table id="example" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Date/Time</th>
-                    <th>Severity</th>
-                    <th>Message</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>2019-03-26T00:53:07.537Z</td>
-                    <td><span class="badge bg-success">INFO</span></td>
-                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat ullam facilis,
-                        voluptates modi unde maiores earum culpa fuga consequuntur!</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <button type="button" class="btn btn-secondary my-2 mb-4">Export Log (CSV)</button>
-
-
-        <form class="my-4">
-            <label class="form-check-label" for="exampleCheck1">Acknowledgement Comment (Optional) :</label>
-            <div class="mb-3">
-                <input type="text" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-dark">Acknowledge Alarm</button>
-            <button type="button" class="btn btn-outline-danger">Cancel</button>
+            <button type="submit" class="btn btn-dark">Save</button>
+            <button type="button" class="btn btn-outline-danger">Cancel Changes</button>
         </form>
-    </div>
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+            </script>
 
-    <script src="js/bootstrap-4-navbar.js"></script>
+        <script src="js/jquery-3.5.1.js"></script>
 
-    <script src="js/jquery-3.5.1.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
 
-    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+        <script src="js/bootstrap-4-navbar.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable({
-                columnDefs: [{
-                    orderable: false,
-                    className: 'select-checkbox',
-                    targets: 0
-                }],
-                select: {
-                    style: 'os',
-                    selector: 'td:first-child'
-                },
-                order: [[1, 'asc']]
-            });
-        });
-    </script>
 </body>
 
 </html>
